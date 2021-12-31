@@ -24,3 +24,18 @@ DET -> a
 PREP -> with
 """
 ```
+
+### API
+When creating an instance of the cky class, initialize it by giving the constructor a grammer. Give the statement to be analyzed to the analyze method of the generated instance and execute it. `main.py` also helps you.
+```python
+from cky import CKY
+
+from lxml import etree
+
+sentence = "I saw a girl with a telescope"
+cky = CKY(grammer)
+res = cky.analyze(sentence)
+for i, item in enumerate(res):
+  print(f"解析結果{i+1}")
+  print(etree.tostring(item, pretty_print=True).decode())
+```
